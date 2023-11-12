@@ -24,8 +24,11 @@
 /**
  * struct format - Struct operation
  *
- * @format: The format character.
- * @func: The function associated corresponding the format.
+ * @format: represents the format character.
+ * @func: represents a pointer to the function
+ * associated with the format character.This function
+ * takes a variable argument list (va_list) and other
+ * formatting parameters,then performs the necessary printing operation.
  */
 struct format
 {
@@ -35,10 +38,10 @@ struct format
 
 
 /**
- * typedef struct format fmt_t - Struct op
+ * typedef struct format format_t - Struct op
  *
- * @format: The format.
- * @fm_t: The function associated.
+ * @format: The format structure.
+ * @format_t: the new name of format strcture.
  */
 typedef struct format format_t;
 
