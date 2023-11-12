@@ -23,7 +23,7 @@
  */
 int handlePrint(const char *frmt, int *ind, va_list list, char buffer[], int flags, int width, int precision, int size)
 {
-        fmt_t formatTypes[] = {
+        format_t formatTypes[] = {
                 {'c', printfChar},
                 {'s', printfString},
                 {'%', printfPercentSign},

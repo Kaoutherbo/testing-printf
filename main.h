@@ -40,7 +40,7 @@ struct format
  * @format: The format.
  * @fm_t: The function associated.
  */
-typedef struct format fmt_t;
+typedef struct format format_t;
 
 int printfChar(va_list listType, char buffer[], int flags, int width, int precision, int size);
 int printfString(va_list listType, char buffer[], int flags, int width, int precision, int size);
