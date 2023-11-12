@@ -1,7 +1,15 @@
 #include "main.h"
 
 /**
- * printfChar -function that  prints a char
+ * printfChar - function that  prints a char
+ * 
+ * Description: this function prints a character. It takes a list
+ * of arguments, a buffer for printing, and various
+ * formatting parameters such as flags, width, precision,
+ * and size.The function retrieves the character from
+ * the argument list and delegates the printing task to 
+ * handleWriteChar. The return value is the number of 
+ * bytes or characters printed.
  * 
  * @listType: a list a of arguments
  * @buffer: a buffer array to handle print
@@ -21,6 +29,11 @@ int printfChar(va_list listType, char buffer[], int flags, int width, int precis
 /**
  * printfString - function that prints a string
  * 
+ * Description: this function prints a string, handling formatting
+ * options such as width, precision, and alignment flags.
+ * It calculates the length, considers special cases for
+ * NULL strings, and prints the formatted string.
+ * 
  * @listType: a list of arguments
  * @buffer: the buffer array to handle print
  * @flags:  to calculates active flags
@@ -28,7 +41,7 @@ int printfChar(va_list listType, char buffer[], int flags, int width, int precis
  * @precision: the precision specification
  * @size: the size specifier
  * 
- * Return: the number of bytes or characters printed
+ * Return: the number of characters printed.
  */
 int printfString(va_list listType, char buffer[], int flags, int width, int precision, int size)
 {
@@ -81,6 +94,10 @@ int printfString(va_list listType, char buffer[], int flags, int width, int prec
 /**
  * printfPercentSign - function that prints a percent sign
  * 
+ * Description: this function prints a percent sign ("%").
+ * It ignores formatting parameters and directly writes the
+ * percent sign to the output. 
+ * 
  * @listType: a list of arguments
  * @buffer: the buffer array to handle print
  * @flags:  to calculates active flags
@@ -103,7 +120,12 @@ int printfPercentSign(va_list listType, char buffer[], int flags, int width, int
 
 
 /**
- * print_int - function that prints an integer number
+ * printfInteger - function that prints an integer number
+ * 
+ * Description: this function prints an integer with specified formatting
+ * options. It converts the input number, processes digits,
+ * and utilizes writeNumber for printing. The return is
+ * the count of characters printed.
  * 
  * @listType: a list of arguments
  * @buffer: buffer array to handle print
@@ -112,7 +134,7 @@ int printfPercentSign(va_list listType, char buffer[], int flags, int width, int
  * @precision: the precision specification
  * @size: the size specifier
  * 
- * Return: number of characters or bytes printed
+ * Return: the number of characters printed
  */
 int printfInteger(va_list listType, char buffer[], int flags, int width, int precision, int size)
 {

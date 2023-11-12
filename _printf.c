@@ -3,8 +3,13 @@
 /**
  * printBuffer - procedure that prints the contents of the buffer if it exist
  * 
+ * Description: this procedure prints the contents of a character 
+ * array up to a specified index if the buffer is non-empty.
+ * The index represents the length of the content 
+ * to be printed.After printing, the index is reset to zero.
+ * 
  * @buffer: Array of chars
- * @buff_ind: Index at which to add next char, represents the length.
+ * @buffIndx: Index at which to add next char, represents the length.
  * Return: void
  */
 void printBuffer(char buffer[], int *buffIndx)
@@ -18,8 +23,13 @@ void printBuffer(char buffer[], int *buffIndx)
  * _printf - is an implementation of the printf function
  * it can print anything
  * 
+ * Description: this function print various types of data. It processes
+ * the format string, handling placeholders and formatting options.
+ * The characters are stored in a buffer and printed in chunks for
+ * efficiency. The function returns the total number of printed characters.
+ * 
  * @format: format pointer.
- * Return: Printed chars.
+ * Return: the total number of printed characters.
  */
 int _printf(const char *format, ...)
 {
