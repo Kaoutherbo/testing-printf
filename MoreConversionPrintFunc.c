@@ -4,6 +4,10 @@
 /**
  * printfPointer - function that prints the value of a pointer variable
  * 
+ * Description: this function prints the value of a pointer variable in hexadecimal
+ * format. It considers various formatting options such as width,
+ * flags, and padding.
+ * 
  * @listType: List a of arguments
  * @buffer: a buffer array to handle print
  * @flags:  to calculates active flags
@@ -49,11 +53,11 @@ int printfPointer(va_list types, char buffer[], int flags, int width, int precis
 
 
 /**
- * printfUnPrintable - function that prints the ascii codes in hexa of un printable characters
+ * printfUnPrintable - function that prints the ASCII codes in hexa of unprintable characters
  * 
- * Description: non printable characters are the characters between (0 < ASCII value < 32 or >= 127) and they 
- * are printed this way: \x, followed by the ASCII code value 
- * in hexadecimal (upper case - always 2 characters)
+ * Description: this function prints the ASCII codes in hexadecimal
+ * of unprintable characters in a string. It skips printable characters
+ * and appends the hexadecimal codes for unprintable ones.
  * 
  * @listType: List a of arguments
  * @buffer: a buffer array to handle print
@@ -100,6 +104,10 @@ int printfUnPrintable(va_list listType, char buffer[], int flags, int width, int
 /**
  * printfReverse - function that prints the reverse of a string.
  * 
+ * Description: this function prints the reverse
+ * of a string. It calculates the length of the string
+ * and prints characters in reverse order.
+ * 
  * @listType: a list a of arguments
  * @buffer: a buffer array to handle print
  * @flags:  to calculates active flags
@@ -141,6 +149,9 @@ int printfReverse(va_list listType, char buffer[], int flags, int width, int pre
 
 /**
  * printfRot13String - function that prints a string in rot13.
+ * 
+ * Description: this function prints a string in ROT13 encryption.
+ * It transforms each character according to the ROT13 algorithm.
  * 
  * @listType: a list a of arguments
  * @buffer: a buffer array to handle print

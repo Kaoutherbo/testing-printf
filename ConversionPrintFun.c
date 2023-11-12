@@ -164,54 +164,36 @@ int printfInteger(va_list listType, char buffer[], int flags, int width, int pre
 
 
 /**
- * printfBinary - function that prints an unsigned binary number
- * this function convert a number into its representation in binary
+ * printfUnsigned - function that prints an unsigned number
  * 
- * @listType: a list of arguments
- * @buffer: the buffer array to handle print
+ * Description: this function prints an unsigned number, handling
+ * various formatting options such as width, precision, and flags.
+ * It converts the input number, processes each digit, and
+ * delegates the printing task to writeUnsigned function.
+ * 
+ * @listType: a list a of arguments
+ * @buffer: buffer array to handle print
  * @flags:  to calculates active flags
- * @width: to get the width.
+ * @width: to get the width
  * @precision: the precision specification
  * @size: the size specifier
  * 
  * Return: the number of bytes or characters printed
  */
-int printfBinary(va_list listType, char buffer[], int flags, int width, int precision, int size)
+int printfUnsigned(va_list listType, char buffer[],int flags, int width, int precision, int size)
 {
-        unsigned int num, k, i, sum;
-        unsigned int a[32];
-        int count;
+        int i = BUFFER_SIZE - 2;
+        unsigned long int num = va_arg(listType, unsigned long int);
 
-        UNUSED(buffer);
-        UNUSED(flags);
-        UNUSED(width);
-        UNUSED(precision);
-        UNUSED(size);
-
-
-        num = va_arg(listType, unsigned int);
-        k = 2147483648; 
-        a[0] = num / k;
-        i = 1;
-        while( i < 32)
+        num = convertSizeUnsigned(num, size);
+        if (num == 0)
+                buffer[i--] = '0';
+        buffer[BUFFER_SIZE - 1] = '\0';
+        while (num > 0)
         {
-                k /= 2;
-                a[i] = (num / k) % 2;
-                i++;
+                buffer[i--] = (num % 10) + '0';
+                num /= 10;
         }
-        i = 0, sum = 0, count = 0;
-        while ( i < 32)
-        {
-                sum += a[i];
-                if (sum || i == 31)
-                {
-                        char z = '0' + a[i];
-
-
-                        write(1, &z, 1);
-                        count++;
-                }
-                i++;
-        }
-        return (count);
+        i++;
+        return (writeUnsigned(0, i, buffer, flags, width, precision, size));
 }

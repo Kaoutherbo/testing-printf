@@ -2,6 +2,10 @@
 
 /**
  * isPrintable - function that evaluates if a char is printable or not
+ * 
+ * Description: checks if a character is printable
+ * (ASCII value between 32 and 127).
+ * 
  * @ch: Char to be evaluated.
  *
  * Return: true if ch is printable, false otherwise
@@ -14,10 +18,9 @@ bool isPrintable(char ch)
 /**
  * appendHexaCode - this function append ascci in hexadecimal code to buffer
  * 
- * Description: this function appends the ASCII code in hexadecimal to a
- * character array at the given index. It uses a mapping array and
- * adjusts for negativity. It returns 3, representing the number of
- * characters appended.
+ * Description: this function appends the ASCII code
+ * in hexadecimal to a character array at the given index.
+ * It returns 3, representing the number of characters appended.
  * 
  * @buffer: an array of characters.
  * @ind: Index at which to start appending.
@@ -41,6 +44,9 @@ int appendHexaCode(char asciiCode, char buffer[], int ind)
 
 /**
  * isDigit - function that checks if a char is a digit
+ * 
+ * Description: this function checks if a character is a digit (0-9).
+ * 
  * @ch: Char to be evaluated
  *
  * Return: true if ch is a digit, false otherwise
@@ -53,6 +59,9 @@ bool isDigit(char ch)
 
 /**
  * convertSizeNumber - function that casts a number to the specified size
+ * 
+ * Description: this function cast a number to the specified size 
+ * It return the casted value of the input number.
  * 
  * @num: Number to be casted.
  * @size: Number indicating the type to be casted.
@@ -72,6 +81,10 @@ long int convertSizeNumber(long int num, int size)
 
 /**
  * convertSizeUnsigned - function that casts a number to the specified size
+ * 
+ * Description: this function cast a number to the specified size 
+ * It return the casted value of the input number.
+ * 
  * @num: the number to be casted
  * @size: the number indicating the type to be casted
  *
